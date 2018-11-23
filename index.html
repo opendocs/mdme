@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>MdMe</h1><p>MdMe (pronounced em-dee-me) is a lightweight JavaScript utility to
+create self-rendering Markdown documents.</p>
+<p><a href="https://opendocs.github.io/mdme/examples/content-in-textarea.html"><img src="https://img.shields.io/badge/view-demo-brightgreen.svg" alt="View Demo"></a>
+<a href="https://travis-ci.com/susam/mdme"><img src="https://travis-ci.com/susam/mdme.svg?branch=master" alt="Build Status"></a>
+<a href="https://coveralls.io/github/susam/mdme?branch=master"><img src="https://coveralls.io/repos/github/susam/mdme/badge.svg?branch=master" alt="Coverage Status"></a>
+<a href="https://www.npmjs.com/package/mdme"><img src="https://img.shields.io/npm/v/mdme.svg" alt="NPM Version"></a> <!--
+[![NPM Downloads][Downloads SVG]][NPM URL] -->
+<a href="LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a></p>
+<p>MdMe is a stripped down fork of <a href="https://github.com/susam/texme">TeXMe</a>. While TeXMe renders both
+Markdown and LaTeX content, MdMe renders Markdown only. Thus MdMe is
+smaller, lighter, and simpler than TeXMe, and a good choice for writing
+Markdown-only (no LaTeX) documents.</p>
+<h2>Contents</h2><ul>
+<li><a href="#get-started">Get Started</a></li>
+<li><a href="#cdn-urls">CDN URLs</a></li>
+<li><a href="#valid-html5">Valid HTML5</a></li>
+<li><a href="#use-mdme-in-web-pages">Use MdMe in Web Pages</a><ul>
+<li><a href="#style">Style</a></li>
+<li><a href="#skip-automatic-rendering-on-load">Skip Automatic Rendering on Load</a></li>
+<li><a href="#set-options-after-loading">Set Options After Loading</a></li>
+</ul>
+</li>
+<li><a href="#configuration-options">Configuration Options</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#support">Support</a></li>
+</ul>
+<h2>Get Started</h2><h3>Content in Textarea</h3><p>Copy and paste the code below into an HTML file with <code>.html</code> as the
+extension name:</p>
+<pre class="prettyprint source"><code>&lt;!DOCTYPE html>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/mdme@0.3.0&quot;>&lt;/script>&lt;textarea>
+
+# Atomic Theory
+
+**Atomic theory** is a scientific theory of the nature of matter, which
+states that matter is composed of discrete units called *atoms*. It
+began as a philosophical concept in ancient Greece and entered the
+scientific mainstream in the early 19th century when discoveries in the
+field of chemistry showed that matter did indeed behave as if it were
+made up of atoms.
+
+
+## John Dalton
+
+Dalton believed atomic theory could explain why water absorbed different
+gases in different proportions - for example, he found that water
+absorbed carbon dioxide far better than it absorbed nitrogen.
+
+
+## See Also
+
+See the Wikipedia article on [Atomic
+Theory](https://en.wikipedia.org/wiki/Atomic_theory) for more details.</code></pre><p>This file contains one line of HTML code followed by Markdown content.</p>
+<p>Open this HTML file with a web browser. It renders itself to look like
+this:
+<a href="https://opendocs.github.io/mdme/examples/content-in-textarea.html">content-in-textarea.html</a>.</p>
+<p>There are two simple rules to remember while using MdMe:</p>
+<ul>
+<li>MdMe removes any leading and trailing whitespace in the content
+before rendering the content to HTML.</li>
+<li>TeXMe uses the first non-empty line of the content to set the page
+title if no explicit <code>&lt;title&gt;</code> element is specified. Any leading and
+trailing whitespace and hash (<code>#</code>) characters are removed while
+setting the page title.</li>
+</ul>
+<h3>Content in Body</h3><p>If you do not like to start your document with HTML tags, you can
+write your content first and add the <code>&lt;script&gt;</code> tag in the end like
+this:</p>
+<pre class="prettyprint source"><code># Atomic Theory
+
+**Atomic theory** is a scientific theory of the nature of matter, which
+states that matter is composed of discrete units called *atoms*. It
+began as a philosophical concept in ancient Greece and entered the
+scientific mainstream in the early 19th century when discoveries in the
+field of chemistry showed that matter did indeed behave as if it were
+made up of atoms.
+
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/mdme@0.3.0&quot;>&lt;/script></code></pre><p>Here is the output:
+<a href="https://opendocs.github.io/mdme/examples/content-in-body.html">content-in-body.html</a>.</p>
+<p>Although, the code looks neater in this example, there is a limitation
+associated with this form of writing content: Since the content is part
+of the HTML <code>&lt;body&gt;</code> element (there is no <code>&lt;textarea&gt;</code> element in this
+code), the content should be written carefully, so that it does not have
+any HTML syntax error. See the <a href="https://github.com/susam/texme#caveats">Caveats</a> section of the
+TeXMe documentation for more details about this.</p>
+<h2>CDN URLs</h2><p>Use the following URL in the <code>&lt;script&gt;</code> tag to load version 0.3.0 (the
+current version at this time) of MdMe:</p>
+<pre class="prettyprint source"><code>https://cdn.jsdelivr.net/npm/mdme@0.3.0</code></pre><p>Use the following URL in the <code>&lt;script&gt;</code> tag to always load the latest
+version of MdMe:</p>
+<pre class="prettyprint source"><code>https://cdn.jsdelivr.net/npm/mdme</code></pre><p>If you need something really easy to remember, use this URL to load the
+latest version of MdMe:</p>
+<pre class="prettyprint source"><code>https://unpkg.com/mdme</code></pre><h2>Valid HTML5</h2><p>The &quot;get started&quot; example in the previous section attempts to show how
+we can create a self-rendering document with a single line of HTML code
+but this brevity comes at the cost of standard conformance. For example,
+the required <code>&lt;title&gt;</code> element is missing from the code. Further the
+<code>&lt;textarea&gt;</code> element is not closed.</p>
+<p>For the sake of completeness and correctness, here is a minimal but
+complete and valid HTML5 example:</p>
+<pre class="prettyprint source"><code>&lt;!DOCTYPE html>
+&lt;html lang=&quot;en&quot;>
+&lt;title>Notes on Atomic Theory&lt;/title>
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/mdme@0.3.0&quot;>&lt;/script>
+&lt;textarea>
+
+# Atomic Theory
+
+**Atomic theory** is a scientific theory of the nature of matter, which
+states that matter is composed of discrete units called *atoms*. It
+began as a philosophical concept in ancient Greece and entered the
+scientific mainstream in the early 19th century when discoveries in the
+field of chemistry showed that matter did indeed behave as if it were
+made up of atoms.
+
+&lt;/textarea></code></pre><p>Here is the output:
+<a href="https://opendocs.github.io/mdme/examples/valid-html5.html">valid-html5.html</a>.</p>
+<p>It has a few more lines of code to ensure that this HTML5 code validates
+successfully at <a href="https://validator.w3.org/#validate_by_input">validator.w3.org</a>. As a result, this example
+does not look as concise as the one in the previous section.</p>
+<p>In case you are wondering, a valid HTML5 document does not require
+explicit <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, or the closing <code>&lt;/html&gt;</code> tags. So they have
+been omitted for the sake of brevity while maintaining completeness and
+correctness.</p>
+<p>In practice though, it is not necessary to write verbose code like this.
+All browsers follow the <a href="https://en.wikipedia.org/wiki/Robustness_principle">robustness principle</a>, so they
+can render the shorter example in the previous section just fine.</p>
+<h2>Use MdMe in Web Pages</h2><h3>Style</h3><p>MdMe renders the document on a white pane against a gray background by
+default. This is due to a configuration option named <code>style</code> that is set
+to <code>'viewer'</code> by default.</p>
+<p>To render the document with a minimal style on a completely plain white
+background, set the <code>style</code> configuration option to <code>'plain'</code>. Here is
+an example:</p>
+<pre class="prettyprint source"><code>&lt;!DOCTYPE html>
+&lt;script>window.mdme = { style: 'plain' }&lt;/script>
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/mdme@0.3.0&quot;>&lt;/script>&lt;textarea>
+
+# Atomic Theory
+
+**Atomic theory** is a scientific theory of the nature of matter, which
+states that matter is composed of discrete units called *atoms*. It
+began as a philosophical concept in ancient Greece and entered the
+scientific mainstream in the early 19th century when discoveries in the
+field of chemistry showed that matter did indeed behave as if it were
+made up of atoms.</code></pre><p>Here is the output:
+<a href="https://opendocs.github.io/mdme/examples/style-plain.html">style-plain.html</a>.</p>
+<p>To render the document with absolutely no style, set <code>style</code> to
+<code>'none'</code>. The <code>'none'</code> style option is useful to disable the default
+<code>'viewer'</code> style set by MdMe before defining a custom style with
+regular CSS code. Here is an example:</p>
+<pre class="prettyprint source"><code>&lt;!DOCTYPE html>
+&lt;script>window.mdme = { style: 'none' }&lt;/script>
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/mdme@0.3.0&quot;>&lt;/script>
+&lt;style>
+body {
+  background: lightcyan;
+}
+main {
+  max-width: 20em;
+  padding: 1em;
+  border: medium double gray;
+  margin: 2em auto;
+  background: lightyellow;
+}
+&lt;/style>
+&lt;textarea>
+
+# Atomic Theory
+
+**Atomic theory** is a scientific theory of the nature of matter, which
+states that matter is composed of discrete units called *atoms*. It
+began as a philosophical concept in ancient Greece and entered the
+scientific mainstream in the early 19th century when discoveries in the
+field of chemistry showed that matter did indeed behave as if it were
+made up of atoms.</code></pre><p>Here is the output:
+<a href="https://opendocs.github.io/mdme/examples/style-custom.html">style-custom.html</a>.</p>
+<p>Note that the rendered content is displayed within a <code>&lt;main&gt;</code> element
+inside the <code>&lt;body&gt;</code>. That is why these elements are being styled in the
+above example.</p>
+<h3>Skip Automatic Rendering on Load</h3><p>When MdMe loads, it begins rendering the document automatically. This
+automatic rendering may be skipped by setting <code>renderOnLoad</code> option to
+<code>false</code>. Here is an example that disables automatic rendering and then
+invokes rendering later on the click of a button by using the
+<code>mdme.renderPage()</code> function from the MdMe API:</p>
+<pre class="prettyprint source"><code>&lt;!DOCTYPE html>
+&lt;script>window.mdme = { renderOnLoad: false }&lt;/script>
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/mdme@0.3.0&quot;>&lt;/script>
+&lt;script>
+window.onload = function () {
+  var button = document.getElementById('button')
+  button.onclick = function () {
+    button.remove()
+    mdme.renderPage()
+  }
+}
+&lt;/script>
+&lt;textarea>
+
+# Atomic Theory
+
+**Atomic theory** is a scientific theory of the nature of matter, which
+states that matter is composed of discrete units called *atoms*. It
+began as a philosophical concept in ancient Greece and entered the
+scientific mainstream in the early 19th century when discoveries in the
+field of chemistry showed that matter did indeed behave as if it were
+made up of atoms.
+
+&lt;/textarea>
+&lt;div>&lt;button id=&quot;button&quot;>Render&lt;/button>&lt;/div></code></pre><p>Here is the output:
+<a href="https://opendocs.github.io/mdme/examples/skip-render.html">skip-render.html</a>.</p>
+<h3>Set Options After Loading</h3><p>When we load MdMe with the <code>&lt;script&gt;</code> tag, it begins rendering the
+document as soon as it loads. Therefore in the above examples, we define
+the configuration options prior to loading MdMe. We do this by defining
+an object named <code>window.mdme</code> with the configuration options defined as
+properties in this project.</p>
+<p>However if we set the <code>renderOnLoad</code> option to <code>false</code>, we prevent MdMe
+from rendering the document after it loads. We now have the control to
+invoke the rendering at a later time, e.g., on the click of a button. In
+this case, it is possible to set configuration options after loading
+MdMe with the <code>mdme.setOption()</code> function. This function takes two
+parameters: option name as a string and option value.</p>
+<p>Here is an example that skips automatic rendering on load and sets the
+style to <code>'plain'</code> using this function:</p>
+<pre class="prettyprint source"><code>&lt;!DOCTYPE html>
+&lt;script>window.mdme = { renderOnLoad: false }&lt;/script>
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/mdme@0.3.0&quot;>&lt;/script>
+&lt;script>
+window.onload = function () {
+  var button = document.getElementById('button')
+  button.onclick = function () {
+    button.remove()
+    mdme.setOption('style', 'plain')
+    mdme.renderPage()
+  }
+}
+&lt;/script>
+&lt;textarea>
+
+# Atomic Theory
+
+**Atomic theory** is a scientific theory of the nature of matter, which
+states that matter is composed of discrete units called *atoms*. It
+began as a philosophical concept in ancient Greece and entered the
+scientific mainstream in the early 19th century when discoveries in the
+field of chemistry showed that matter did indeed behave as if it were
+made up of atoms.
+
+&lt;/textarea>
+&lt;div>&lt;button id=&quot;button&quot;>Render&lt;/button>&lt;/div></code></pre><p>Here is the output:
+<a href="https://opendocs.github.io/mdme/examples/set-options.html">set-options.html</a>.</p>
+<h2>Configuration Options</h2><p>Here is a quick reference for all the supported configuration options:</p>
+<ul>
+<li><p><code>style</code> (<code>'viewer'</code> by default): Three values are supported:
+<code>'viewer'</code>, <code>'plain'</code>, and <code>'none'</code>. The viewer style displays
+the rendered document on a white pane against a gray background. The
+plain style displays the content with a very minimal style that does
+not change the background style. If set to <code>'none'</code>, no style
+whatsoever is applied and the document is displayed with the
+browser's default style.</p>
+</li>
+<li><p><code>renderOnLoad</code> (<code>true</code> by default): Begins rendering the document
+automatically on load when set to <code>true</code>. Skips rendering
+automatically when set to <code>false</code>.</p>
+</li>
+<li><p><code>onRenderPage</code> (<code>undefined</code> by default): A callback function that is
+automatically invoked after MdMe completes rendering the page. It
+is guaranteed that MdMe has completed rendering the page before
+invoking this callback.</p>
+</li>
+<li><p><code>commonmarkURL</code> (CDN URL of minified commonmark.js, i.e.,
+commonmark.min.js, version 0.28.1 by default): URL to load
+commonmark.js while running in a web browser.</p>
+</li>
+</ul>
+<h2>License</h2><p>This is free and open source software. You can use, copy, modify,
+merge, publish, distribute, sublicense, and/or sell copies of it,
+under the terms of the MIT License. See <a href="LICENSE.md">LICENSE.md</a> for details.</p>
+<p>This software is provided &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+express or implied. See <a href="LICENSE.md">LICENSE.md</a> for details.</p>
+<h2>Support</h2><p>To report bugs, suggest improvements, or ask questions,
+<a href="https://github.com/susam/mdme/issues">create issues</a>.</p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-mdme.html">mdme</a></li></ul><h3>Namespaces</h3><ul><li><a href="inner.html">inner</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Nov 22 2018 17:40:51 GMT-0800 (Pacific Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
